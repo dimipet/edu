@@ -31,7 +31,7 @@ int main(int argc, char** argv) {
 		int my_array[100];
 		int i;
 		for (i = 0; i < 100; i++) {
-										my_array[i] = rand();
+			my_array[i] = rand();
 		}
 		insertion_sort(my_array, 100);
 		return (EXIT_SUCCESS);
