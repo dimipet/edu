@@ -9,7 +9,7 @@
 int A[10]; //έστω πίνακας Α
 
 void print_array(int A[], int n){
-  int i
+  int i;
   for (i = 0; i < n; i++) {
     printf("%d\n", A[i]);
   }
@@ -28,10 +28,11 @@ void quick_sort(int a, int b) {
     int rtidx = 0; //δείκτης αριστερού πίνακα rtarr[]
     int k = a;
     int l = 0;
+
     //δημιουργία και αρχικοποίηση pivot (βλ.Θεωρία)
     int pivot = A[a];
 
-    if (a == b)return; //συνθήκη τερματισμού αναδρομής
+    if (a == b) return; //συνθήκη τερματισμού αναδρομής
 
     while (k < b) {
         ++k;
@@ -41,7 +42,7 @@ void quick_sort(int a, int b) {
             leftarr[ltidx] = A[k];
             //αύξηση δείκτη πίνακα leftarr
             ltidx++;
-        }            //αλλιώς αν μεγαλύτερο ή ίσο
+        }   //αλλιώς αν μεγαλύτερο ή ίσο
         else {
             //πρόσθεσε στον δεξί πίνακα rtarr το A[k]
             rtarr[rtidx] = A[k];
@@ -62,12 +63,11 @@ void quick_sort(int a, int b) {
 }//τέλος quick_sort συνάρτησης
 
 int main(int argc, char** argv) {
-  int my_array[100];
   int i;
-  for (i = 0; i < 100; i++) {
-    my_array[i] = rand();
+  for (i = 0; i < 10; i++) {
+    A[i] = rand();
   }
-  quick_sort(my_array, 100);
-  print_array(my_array, 100);
+  quick_sort(0, 10);
+  print_array(A, 10);
   return (EXIT_SUCCESS);
 }
