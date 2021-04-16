@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int A[10]; //έστω πίνακας Α
+//int A[10]; //έστω πίνακας Α
 
 void print_array(int A[], int n){
   int i;
@@ -17,7 +17,7 @@ void print_array(int A[], int n){
 
 
 //συνάρτηση quick_sort
-void quick_sort(int a, int b) {
+void quick_sort(int A[], int a, int b) {
 
     //τοπικές μεταβλητές
 
@@ -57,17 +57,18 @@ void quick_sort(int a, int b) {
     for (l = 0; l < rtidx; ++l)A[k++] = rtarr[l]; //τέλος for
 
     //αναδρομή για επιμέρους πίνακες που δημιουργήθηκαν
-    if (ltidx > 0)quick_sort(a, a + ltidx - 1);
-    if (rtidx > 0)quick_sort(b - rtidx + 1, b);
+    if (ltidx > 0)quick_sort(A, a, a + ltidx - 1);
+    if (rtidx > 0)quick_sort(A, b - rtidx + 1, b);
 
 }//τέλος quick_sort συνάρτησης
 
 int main(int argc, char** argv) {
+  int A[10];
   int i;
   for (i = 0; i < 10; i++) {
     A[i] = rand();
   }
-  quick_sort(0, 10);
+  quick_sort(A, 0, 9);
   print_array(A, 10);
   return (EXIT_SUCCESS);
 }
