@@ -35,28 +35,28 @@
  * compile using : gcc ./main.c -o main -lm
  */
 int main(int argc, char** argv) {
-    int N;
-    float K, E, D, P, T, F;
+    int n;
+    float k, e, d, p, t, f;
 
-    printf("\n Δωσε αριθμο μηνιαιων δωσεων N : ");
-    scanf("%d", &N);
-    printf("\n Δωσε αρχικο κεφαλαιο K : ");
-    scanf("%f", &K);
-    printf("\n Δωσε επιτοκιο E (π.χ. 4.5): ");
-    scanf("%f", &E);
-    E=E/12;
+    printf("\n Δωσε αριθμο μηνιαιων δωσεων n : ");
+    scanf("%d", &n);
+    printf("\n Δωσε αρχικο κεφαλαιο k : ");
+    scanf("%f", &k);
+    printf("\n Δωσε επιτοκιο e (π.χ. 4.5): ");
+    scanf("%f", &e);
+    e=e/12;
 
-    D = K*(E/100*pow((1+E/100),N)) / (pow((1+E/100),N)-1);
-    printf("\n Η μηνιαια δοση ειναι : %f ", D);
+    d = k*(e/100*pow((1+e/100),n)) / (pow((1+e/100),n)-1);
+    printf("\n Η μηνιαια δοση ειναι : %f ", d);
 
-    P = N*D;
-    printf("\n Το συνολικό ποσό αποπληρωμης ειναι : %f  ", P);
+    p = n*d;
+    printf("\n Το συνολικό ποσό αποπληρωμης ειναι : %f  ", p);
 
-    T = P - K;
-    printf("\n Το επιπλεον ποσο ειναι : %f ", T);
+    t = p - k;
+    printf("\n Το επιπλεον ποσο ειναι : %f ", t);
 
-    F = (T / K)*100;
-    printf("\n Ποσοστο τοκου επι του κεφαλαιου : %f%% ", F);
+    f = (t / k)*100;
+    printf("\n Ποσοστο τοκου επι του κεφαλαιου : %f%%  ", f);
     printf("\n");
 
     return (EXIT_SUCCESS);
