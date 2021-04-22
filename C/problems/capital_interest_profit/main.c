@@ -44,7 +44,7 @@ int main(int argc, char** argv) {
 
     printf(" Enter Capital, Interest, Years [e.g. 100 3.2 15] \n");
     scanf("%f %f %d", &capital, &interest, &years);
-    printf(" Initial capital %8.2f, interest %4.2f\n", capital, interest);
+    printf(" Initial capital %8.2f, interest %4.2f, years %d\n ", capital, interest, years);
     printf(" Year   Profit     Capital\n");
 
     /* Ypologismoi kai ektiposi */
