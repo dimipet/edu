@@ -10,10 +10,12 @@
 /*
  * Στην τοκοχρεολυτική μηνιαία απόσβεση ενός δανείου με σταθερό επιτόκιο, η
  * σχέση που χρησιμοποιείται για τον υπολογισμό της μηνιαίας δόσης Δ για την
- * αποπληρωμή αρχικού κεφαλαίου Κ, με σταθερό επιτόκιο Ε, σε αριθμό μηνιαίων
- * δόσεων Ν είναι η εξής:
+ * αποπληρωμή αρχικού κεφαλαίου Κ, με σταθερό μηνιαιο επιτόκιο Ε, σε αριθμό
+ * μηνιαίων δόσεων Ν είναι η εξής:
  *
  * Δ=( Κ*(1+Ε)^Ν ) / ( (((1+Ε)^Ν)-1) / (Ε) )
+ *
+ * όπου Ε = Ε/12 για μηνιαιο
  *
  * Να γραφεί πρόγραμμα που να διαβάζει από το πληκτρολόγιο τα Κ, Ε και Ν.
  * Με βάση τα παραπάνω να:
@@ -36,29 +38,25 @@ int main(int argc, char** argv) {
     int N;
     float K, E, D, P, T, F;
 
-    /* Eisagogi dedomenon apo to pliktrologio */
-    printf("\n Dose arithmo doseon N: ");
+    printf("\n Δωσε αριθμο μηνιαιων δωσεων N : ");
     scanf("%d", &N);
-    printf("\n Dose arxiko kefalaio K: ");
+    printf("\n Δωσε αρχικο κεφαλαιο K : ");
     scanf("%f", &K);
-    printf("\n Dose epitokio E (0<E<1) :");
+    printf("\n Δωσε επιτοκιο E (π.χ. 4.5): ");
     scanf("%f", &E);
+    E=E/12;
 
-    /* Ypologismos dosis */
-    D = (K * pow((1 + E), N)) / ((pow((1 + E), N) - 1) / E);
-    printf("\n H Dosi einai: %f", D);
+    D = K*(E/100*pow((1+E/100),N)) / (pow((1+E/100),N)-1);
+    printf("\n Η μηνιαια δοση ειναι : %f ", D);
 
-    /* Ypologismos sinolikoy posoy */
     P = N*D;
-    printf("\n To synoliko poso einai %f", P);
+    printf("\n Το συνολικό ποσό αποπληρωμης ειναι : %f  ", P);
 
-    /* Ypologismos epilpeon posoy */
     T = P - K;
-    printf("\n To epipleon poso einai: %f", T);
+    printf("\n Το επιπλεον ποσο ειναι : %f ", T);
 
-    /* Ypologismos posostoy */
     F = (T / K)*100;
-    printf("\n To pososto einai: %f%%", F);
+    printf("\n Ποσοστο τοκου επι του κεφαλαιου : %f%% ", F);
     printf("\n");
 
     return (EXIT_SUCCESS);
