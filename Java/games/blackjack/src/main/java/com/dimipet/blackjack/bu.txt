@@ -1,0 +1,48 @@
+//	private Vector lostMoneyVector = new Vector();
+//	private Vector winMoneyVector = new Vector();
+
+//		lostMoneyVector.clear();
+//		winMoneyVector.clear();
+
+	// εμφαινίζει αποτελέσματα παιχνιδιού ημέρας
+	public void showTodaysMoneyStatus() {
+		System.out.println("#####-----TOTALS TODAY----#####------------------");
+//		System.out.println("--->You won totally today: (with bids included) :" + getSumOfWonMoneyVector());
+//		System.out.println("--->You lost totally today: (with bids included) :" + getSumOfLostMoneyVector());
+//
+//		System.out.println("--->Amount of bids lost totally today : " + ((lostMoneyVector.size() + winMoneyVector.size()) * 5));
+//		System.out.println("--->Amount of bet won in all games today is : " + (getSumOfWonMoneyVector() - winMoneyVector.size() * 5));
+//		System.out.println("--->Amount of bet lost in all games today is : " + (getSumOfLostMoneyVector() - lostMoneyVector.size() * 5));
+		System.out.println("#####---------------------#####------------------");
+	}
+
+//	// επιστρέφει το άθροισμα των χρημάτων που χαθηκαν στο παιχνίδι
+//	private int getSumOfLostMoneyVector() {
+//		int looses = 0;
+//		for (int i = 0; i < lostMoneyVector.size(); i++) {
+//			looses = looses + (Integer) lostMoneyVector.elementAt(i);
+//		}
+//		return looses;
+//
+//	}
+//
+//	// μηδενίζει τα χρήματα που χαθηκαν στο παιχνίδι
+//	private void initializeLostMoneyVector() {
+//		lostMoneyVector.clear();
+//	}
+//
+//	// επιστρεφει το άθροισμα των χρημάτων που κερδήθηκαν
+//	private int getSumOfWonMoneyVector() {
+//		int win = 0;
+//
+//		for (int i = 0; i < winMoneyVector.size(); i++) {
+//			win = win + (Integer) winMoneyVector.elementAt(i);
+//		}
+//		return win;
+//
+//	}
+//
+//	// μηδενίζει τα χρήματα που κερδήθηκαν στο παιχνίδι
+//	private void initializeWinMoneyVector() {
+//		winMoneyVector.clear();
+//	}
