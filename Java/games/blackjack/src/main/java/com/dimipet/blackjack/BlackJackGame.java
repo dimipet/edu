@@ -46,6 +46,7 @@ public class BlackJackGame {
 			PlayCode cret = null;
 
 			if (hret == PlayCode.EXT) {
+				currentPlayer.stats();
 				removeCurrentPlayer();
 				continue;
 			} else if (hret == PlayCode.LRN) { //loose round
@@ -54,22 +55,25 @@ public class BlackJackGame {
 				// break;
 				continue;
 			} else if (hret == PlayCode.BLJ) { //blackjack
-				// do sth
+				System.out.println("[" + currentPlayer.name + "]" + " you win, dealer looses");
+				currentPlayer.win();
 			} else if (hret == PlayCode.BST) { //busted
-				System.out.println("[" + currentPlayer.name + "]" + " you loose, computer wins");
+				System.out.println("[" + currentPlayer.name + "]" + " you loose, dealer wins");
+				currentPlayer.loose();
 			} else if (hret == PlayCode.STA) { // stay
 				
 				cret = dealer.play();
 				
 				if (cret == PlayCode.BST) {
-					System.out.println("[" + currentPlayer.name + "]" + " you win, computer looses");
+					System.out.println("[" + currentPlayer.name + "]" + " you win, dealer looses");
 					currentPlayer.win();
 				
 				} else if (currentPlayer.getHandSum() <= dealer.getHandSum()) {
-					System.out.println("[" + currentPlayer.name + "]" + " you loose, computer wins");
+					System.out.println("[" + currentPlayer.name + "]" + " you loose, dealer wins");
+					currentPlayer.loose();;
 				
 				} else if (currentPlayer.getHandSum() > dealer.getHandSum()) {
-					System.out.println("[" + currentPlayer.name + "]" + " you win, computer looses");
+					System.out.println("[" + currentPlayer.name + "]" + " you win, dealer looses");
 					currentPlayer.win();
 				}
 			}
