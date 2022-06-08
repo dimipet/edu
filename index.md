@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## dimipet:> εκπαιδευτικό υλικό και σημειώσεις
 
 You can use the [editor on GitHub](https://github.com/dimipet/edu/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
