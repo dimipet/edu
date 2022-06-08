@@ -1,3 +1,3 @@
 ## dimipet:> εκπαιδευτικό υλικό και σημειώσεις
 
-repo: (https://github.com/dimipet/edu).
+[link to repo](https://github.com/dimipet/edu).
