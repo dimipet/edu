@@ -2,10 +2,10 @@ package com.dimipet.bank;
 
 public enum CardType {
 	
-	MASTER("MasterCard"),
+    MASTER("MasterCard"),
     MAESTRO("Maestro"),
     VISA("Visa"),
-    PaySafe("PaySafe"),
+    PAYSAFE("PaySafe"),
     AMEX("American Express");
 
     public final String label;
