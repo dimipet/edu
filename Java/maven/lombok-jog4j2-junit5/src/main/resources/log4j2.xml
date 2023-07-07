@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+
+	<Appenders>
+		<Console name="console-logger">
+			<PatternLayout
+				pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+		</Console>
+		<File name="file-logger" fileName="logs/app.log">
+			<PatternLayout>
+				<Pattern>%d{YYYYMMDD'T'HHmmss.SSS} %p %c{1.} [%t] %m%n</Pattern>
+			</PatternLayout>
+		</File>
+	</Appenders>
+
+	<Loggers>
+		<!-- ALL TRACE DEBUG INFO WARN ERROR FATAL OFF -->
+		
+		<!-- will log to console WARN ERROR FATAL -->
+		<Logger name="com.dimipet.jog4j2junit5.model" additivity="false" level="warn">
+			<AppenderRef ref="console-logger" />
+		</Logger>
+		
+		<!-- will log to console ERROR FATAL -->
+		<Logger name="com.dimipet.jog4j2junit5.service" additivity="false" level="error">
+			<AppenderRef ref="console-logger" />
+		</Logger>
+		
+		<!-- will log to file log/app.log TRACE DEBUG INFO WARN ERROR FATAL -->
+		<Logger name="com.dimipet.jog4j2junit5" additivity="false" level="trace">
+			<AppenderRef ref="file-logger" />
+		</Logger>
+		
+		<!-- root logger always on error -->
+		<Root level="error">
+			<AppenderRef ref="console-logger" />
+		</Root>
+	</Loggers>
+</Configuration>
